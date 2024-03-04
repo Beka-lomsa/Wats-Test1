@@ -1,0 +1,77 @@
+.chatMain_container {
+    width: 80%;
+    margin: auto;
+    margin-top: 40px;
+    height: 470px;
+    border: 2px solid rgb(48, 110, 23); 
+    padding: 10px;
+    position: relative;
+}
+.content_container{
+    border: 2px solid rgb(60, 109, 109);
+    width: 70%;
+    height: 42vh;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding-bottom: 1.5vh;
+    overflow-y: auto;
+}
+.input_container{
+    height: auto;
+    display: flex;
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    transform: translate(-50%);
+}
+.input_container input {
+    height: 3vh;
+    width: 23vh;
+    outline: none;
+    border: 1px solid green;
+    padding: 2px 10px;
+    cursor: text;
+}
+.submit_btn{
+    padding: 0;
+    background-color: transparent;
+}
+.send_icon {
+    margin-left: 0.5vh;
+    font-size: 2.5vh;
+    color: rgb(10, 120, 171);
+}
+.send_messages{ 
+    background-color: rgb(117, 95, 95);
+    border-radius: 1vh;
+    width: auto;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: right;
+    text-align: start;
+    padding: 5px;
+    margin-left: 8.5vh;
+    margin-right: 0.3vh;
+    margin-top: 0.5vh;
+    font-size: 0.8rem;
+    overflow-x: auto;
+    word-wrap: break-word; 
+    white-space: pre-wrap;
+}
+
+
+/** Dark Mode */ 
+
+.dark_chatMain_container {
+    width: 80%;
+    margin: auto;
+    margin-top: 40px;
+    height: 470px;
+    border: 2px solid rgb(48, 110, 23); 
+    padding: 10px;
+    position: relative;
+    background-color: rgb(50, 57, 57);
+}

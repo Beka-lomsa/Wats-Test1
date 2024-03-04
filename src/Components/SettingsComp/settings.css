@@ -1,0 +1,31 @@
+.settings_container {
+    width: 80%;
+    margin: auto;
+    margin-top: 40px;
+    height: 470px;
+    border: 2px solid rgb(48, 110, 23); 
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.d-flex {
+    display: flex;
+}
+.common_Class {
+    margin: 0px 20px;
+}
+
+/** Dark Mode */
+.dark_settings_container {
+    width: 80%;
+    margin: auto;
+    margin-top: 40px;
+    height: 470px;
+    border: 2px solid rgb(48, 110, 23); 
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background-color: rgb(92, 55, 73);
+}
