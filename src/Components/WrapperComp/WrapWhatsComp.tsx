@@ -20,8 +20,8 @@ const WrapWhatsComp = () => {
         <>
             <div className="wrappers_main_container">
                 <header className="wrappersHeader">
-                    <button onClick={()=> handleChange("chat")}>Chat</button>
-                    <button onClick={()=> handleChange("settings")}>Settings</button>
+                    <button className ="btnChatSett" onClick={()=> handleChange("chat")}>Chat</button>
+                    <button className ="btnChatSett" onClick={()=> handleChange("settings")}>Settings</button>
                     <Clock clocksDisplay={clocksDisplay}/>
                 </header>
                 <div>

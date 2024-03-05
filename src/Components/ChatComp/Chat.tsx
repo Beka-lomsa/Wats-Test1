@@ -1,4 +1,4 @@
-import { ChangeEvent, useEffect, useState } from "react";
+import { ChangeEvent, useEffect, useState, useRef } from "react";
 import uuid from "react-uuid";
 import "./chat.css";
 
@@ -13,6 +13,7 @@ const Chat: React.FC<ChatProps> = ({
 }) => {
   const [message, setMessage] = useState<string>("");
   const [messages, setMessages] = useState<string[]>([]);
+  const contentRef = useRef<HTMLDivElement>(null)
 
   const handleChangeMessage = (e: ChangeEvent<HTMLInputElement>) => {
     setMessage(e.target.value);
@@ -24,7 +25,6 @@ const Chat: React.FC<ChatProps> = ({
       setMessage("");
     }
   };
-
 
   useEffect(()=> {
     const handlekeyDown  = (e: KeyboardEvent) => {
@@ -40,6 +40,13 @@ const Chat: React.FC<ChatProps> = ({
 
   }, [handleSubmit, messageShortcutSetting])
 
+  useEffect(() => {
+    if (contentRef.current) {
+      contentRef.current.scrollTop = contentRef.current.scrollHeight;
+    }
+  }, [messages]);
+  
+
   return (
     <div
       className={
@@ -48,12 +55,14 @@ const Chat: React.FC<ChatProps> = ({
           : "dark_chatMain_container"
       }
     >
-      <div className="content_container">
+      <div className="content_container" ref={contentRef}>
         {messages.map((item) => {
           return (
-            <p key={uuid()} className="send_messages">
-              {item}
-            </p>
+            <div className="inputs_Wrappers">
+              <p key={uuid()} className="send_messages">
+                {item}
+              </p>
+            </div>
           );
         })}
       </div>

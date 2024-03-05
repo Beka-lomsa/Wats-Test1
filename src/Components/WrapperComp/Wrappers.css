@@ -11,12 +11,12 @@
     height: 30px;
     justify-content: space-around;
 }
-button {
+.btnChatSett {
     padding: 2px 15px;
     border: none;
     background-color: green;
     cursor: pointer;
 }
-button:hover {
+.btnChatSett:hover {
     text-decoration: underline;
 }

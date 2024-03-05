@@ -32,10 +32,18 @@ const Settings: React.FC<SettingsProps> = ({
     setMessageShortcutSetting(e.target.value);
   };
 
-
 // languages
   const handleLanguageChange = (e:any) => {
     setLanguage(e.target.value)
+  }
+
+  // All settings Reset
+
+  const handleResetSettings = () => {
+    setInterfaceColor("Light")
+    setClockDisplay("12-hours")
+    setMessageShortcutSetting("on")
+    setLanguage("En")
   }
 
   return (
@@ -141,6 +149,7 @@ const Settings: React.FC<SettingsProps> = ({
           <option value="Ge">ქართული</option>
         </select>
       </div>
+      <button onClick={handleResetSettings}>Reset settings to defaults</button>
     </div>
   );
 };

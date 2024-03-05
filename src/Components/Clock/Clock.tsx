@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 import "./clock.css";
 
-const Clock = ({clocksDisplay}: {clocksDisplay : string}) => {
+const Clock = ({ clocksDisplay }: { clocksDisplay: string }) => {
   const [time, setTime] = useState(new Date());
+
   useEffect(() => {
     const intervalID = setInterval(() => {
       setTime(new Date());
@@ -18,12 +19,13 @@ const Clock = ({clocksDisplay}: {clocksDisplay : string}) => {
     let minutes: number = currentTime.getMinutes();
     const ampm = hours >= 12 ? "PM" : "AM";
     hours = hours % 12 || 12;
-    minutes = minutes < 10 ? parseInt("0" + minutes) : minutes;
+    const formattedHours = hours < 10 ? "0" + hours : hours.toString();
+    const formattedMinutes = minutes < 10 ? "0" + minutes : minutes.toString();
 
     return (
       <div>
         <p>
-          {hours}:{minutes} {ampm}
+          {formattedHours}:{formattedMinutes} {ampm}
         </p>
       </div>
     );
@@ -32,11 +34,11 @@ const Clock = ({clocksDisplay}: {clocksDisplay : string}) => {
   //  24 Hours Display
   const TwentyFourHoursClock = () => {
     const currentTime = new Date();
-    let hours: number = currentTime.getHours();
-    let minutes: number = currentTime.getMinutes();
+    let hours: string | number = currentTime.getHours();
+    let minutes: string | number = currentTime.getMinutes();
     const ampm = hours >= 12 ? "PM" : "AM";
-    hours = hours < 10 ? parseInt("0" + hours) : hours;
-    minutes = minutes < 10 ? parseInt("0" + minutes) : minutes;
+    hours = hours < 10 ? "0" + hours : hours.toString();
+    minutes = minutes < 10 ? "0" + minutes : minutes.toString();
 
     return (
       <div>
@@ -49,7 +51,7 @@ const Clock = ({clocksDisplay}: {clocksDisplay : string}) => {
 
   return (
     <div>
-      {clocksDisplay === "12-hours" ? <TwelveHoursClock /> : <TwentyFourHoursClock/>}  
+      {clocksDisplay === "12-hours" ? <TwelveHoursClock /> : <TwentyFourHoursClock />}
     </div>
   );
 };
